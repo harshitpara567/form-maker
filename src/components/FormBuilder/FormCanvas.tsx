@@ -72,10 +72,10 @@ export function FormCanvas({ fields, onFieldsChange }: FormCanvasProps) {
 
   return (
     <div className="flex flex-1">
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 overflow-y-auto">
         <div
           ref={drop}
-          className={`min-h-[600px] bg-white border-2 border-dashed rounded-lg p-6 ${
+          className={`min-h-[600px] bg-white border-2 border-dashed rounded-lg p-6 overflow-y-auto ${
             isOver ? 'border-blue-400 bg-blue-50' : 'border-gray-300'
           }`}
         >

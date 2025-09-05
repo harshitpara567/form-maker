@@ -50,6 +50,7 @@ export function DraggableFormField({
           ? 'border-blue-500 shadow-lg ring-1 ring-blue-500'
           : 'border-gray-200 hover:border-gray-300 hover:shadow-sm'
       } ${isDragging ? 'opacity-50' : ''}`}
+      style={{ width: field.styling?.width || '100%' }}
       onClick={onSelect}
     >
       <div className="flex items-start justify-between mb-2">
