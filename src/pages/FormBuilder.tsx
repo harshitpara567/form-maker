@@ -204,8 +204,10 @@ export function FormBuilder() {
           )}
 
           {activeTab === 'style' && (
-            <div className="flex-1 p-6 overflow-y-auto">
-              <FormPreview form={form} />
+            <div className="flex flex-1">
+              <div className="flex-1 p-6 overflow-y-auto">
+                <FormPreview form={form} />
+              </div>
               <FormStyleEditor
                 form={form}
                 onUpdate={(updates) => setForm({ ...form, ...updates })}
