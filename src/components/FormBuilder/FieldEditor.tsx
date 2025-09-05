@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormField } from '../../types/form';
 import { Input } from '../ui/Input';
 import { Button } from '../ui/Button';
@@ -12,6 +12,11 @@ interface FieldEditorProps {
 
 export function FieldEditor({ field, onUpdate, onClose }: FieldEditorProps) {
   const [localField, setLocalField] = useState(field);
+
+  // Keep local state in sync when a different field is selected
+  useEffect(() => {
+    setLocalField(field);
+  }, [field]);
 
   const handleUpdate = (updates: Partial<FormField>) => {
     const updated = { ...localField, ...updates };
